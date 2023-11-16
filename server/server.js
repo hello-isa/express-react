@@ -89,7 +89,7 @@ const DriverList = [
 ]
 
 // GET method
-http://localhost:3000/
+// http://localhost:3000/
 app.get('/', (req, res) => {
     res.send('Express.js')
 })
@@ -117,6 +117,7 @@ app.get('/drivers/:driverID', (req, res) => {
 })
 
 // POST method
+// http://localhost:3000/addDrivers
 app.post('/addDrivers', (req, res) => {
     if (req.body.name !== undefined && req.body.team !== undefined) {
         DriverList.push(req.body);
@@ -127,6 +128,7 @@ app.post('/addDrivers', (req, res) => {
 });
 
 // DELETE method
+// http://localhost:3000/deleteDriver/2
 app.delete('/deleteDriver/:driverID', (req, res) => {
     const driverID = parseInt(req.params.driverID);
     const driverIndex = DriverList.findIndex((driver) => driver.id === driverID);
