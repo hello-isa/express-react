@@ -143,6 +143,7 @@ app.delete('/deleteDriver/:driverID', (req, res) => {
 });
 
 // PUT method
+// http://localhost:3000/updateDriver/3
 app.put('/updateDriver/:driverID', (req, res) => {
     const driverID = parseInt(req.params.driverID);
     const driverIndex = DriverList.findIndex((driver) => driver.id === driverID);
